@@ -2,9 +2,19 @@
 // click the <icon src="AllIcons.Actions.Execute"/> icon in the gutter.
 fun main() {
     print("Введите ключевое слово: ")
-    val key = readln().lowercase()
+    var key = readln().lowercase()
+    while (key.isEmpty() || !key.all { it.isLetter() }) {
+        println("Ошибка ввода!")
+        print("Введите ключевое слово: ")
+        key = readln().lowercase()
+    }
     print("Введите исходный текст: ")
-    val text = readln().lowercase()
+    var text = readln().lowercase()
+    while (text.isEmpty() || !text.all { it.isLetter() }) {
+        println("Ошибка ввода!")
+        print("Введите исходный текст: ")
+        text = readln().lowercase()
+    }
     val letters = charArrayOf('а', 'б', 'в', 'г', 'д', 'е', 'ё', 'ж', 'з', 'и',
         'й', 'к', 'л', 'м', 'н', 'о', 'п', 'р', 'с', 'т', 'у', 'ф', 'х', 'ц',
         'ч', 'ш', 'щ', 'ъ', 'ы', 'ь', 'э', 'ю', 'я')
